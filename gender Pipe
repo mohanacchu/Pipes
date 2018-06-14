@@ -16,6 +16,10 @@ export class EmployeeTitlePipe implements PipeTransform {
   transform(size: number): string {
     return (size / (1024 * 1024)).toFixed(2) + 'MB';
   }
-    
+  //filesize with extension//
+  /*{{ file.size | filesize:'megabyte' }}*/
+    transform(size: number, extension: string = 'MB'): string {
+    return (size / (1024 * 1024)).toFixed(2) + extension;
+  }
     
 } 
